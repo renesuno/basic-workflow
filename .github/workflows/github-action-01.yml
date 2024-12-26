@@ -1,19 +1,13 @@
-name: Greeting on variable day
+### .github/workflows/github-actions-01.yml
 
-on:
-  workflow_dispatch
-
-env:
-  DAY_OF_WEEK: Thursday
+name: Test GitHub Actions-01
+run-name: Run GitHub Actions-01
+on: [push]
 
 jobs:
-  greeting_job:
+  Test-GitHub-Actions:
     runs-on: ubuntu-latest
-    env:
-      Greeting: Hello
     steps:
-      - name: "Say Hello GithubActions it's Thursday"
-        if: ${{ env.DAY_OF_WEEK == 'Thursday' }}
-        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
-        env:
-          First_Name: GithubActions
+      - name: echo-01
+        run: |
+          echo "test echo-01"
